@@ -4,16 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Server</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <h1>A Simple Web Server using C - V.H. Vithanawasam</h1>
-    <p>This is a web server created using C programming language. It incorporates several features including robust error handling, multi-threading for concurrent connections handling, and support for various types of files such as HTML, CSS, serveral image formats, and more.</p>
-    <h2>Try different file type rendering here</h2>
-    <ul>
-        <li>png image - <a href="resources/example.png">Link to png</a></li>
-        <li>gif image - <a href="resources/giphy.gif">Link to gif</a></li>
-        <li>png image - <a href="resources/image3.jpg">Link to Image 3</a></li>
-    </ul>
+
+    <div class="container px-4 py-5">
+    
+        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+          <div class="col d-flex flex-column align-items-start gap-2">
+            <h2 class="fw-bold text-body-emphasis">A Simple Web Server using C</h2>
+            <p class="text-body-secondary">This is a web server created using C programming language. It incorporates several features including robust error handling, concurrent connections handling, and support for various types of files such as HTML, CSS, serveral image formats, and more.</p>
+            <a href="https://github.com/VIHANGAGIT/simple-web-server-using-c" class="btn btn-dark btn-lg">GitHub Repo</a>
+          </div>
+    
+          <div class="col">
+            <div class="row row-cols-1 row-cols-sm-2 g-4">
+              <div class="col d-flex flex-column gap-2">
+                <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                  <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#collection" />
+                  </svg>
+                </div>
+                <h4 class="fw-semibold mb-0 text-body-emphasis">Features</h4>
+                <p class="text-body-secondary">Basic HTTP GET Handling<br>HTTP Response Handling<br>MIME Type identification<br>Handling multiple client requests by forking </p>
+              </div>
+    
+              <div class="col d-flex flex-column gap-2">
+                <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                  <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#gear-fill" />
+                  </svg>
+                </div>
+                <h4 class="fw-semibold mb-0 text-body-emphasis">Supported File Types</h4>
+                <p class="text-body-secondary">Text: .htm, .html<br>Images: .gif, .jpg, .jpeg, .png, .ico<br>Stylesheets: .css<br>Archives: .zip, .gz, .tar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
+        <div class="d-grid gap-2">
+            <a href="resources/sample.png" class="btn btn-primary btn-lg">PNG Sample</a>
+            <a href="resources/sample.gif" class="btn btn-primary btn-lg">GIF Sample</a>
+            <a href="resources/sample.zip" class="btn btn-danger btn-lg">ZIP Sample</a>
+        </div>
+      </div>
 </body>
 </html>
