@@ -55,7 +55,7 @@ void web(int fd, int hit) {
         }
     }
 
-    printf("request %s : %d \n\n", buffer, hit);
+    printf("%s : %d \n\n", buffer, hit);
 
     if (strncmp(buffer, "GET ", 4) && strncmp(buffer, "get ", 4)) {
         printf("Only simple GET operation supported : %s \n", buffer);
@@ -82,7 +82,7 @@ void web(int fd, int hit) {
         (void)strcpy(buffer, "GET /index.html"); // Routing index.html as default page
     }
 
-    buflen = strlen(buffer);
+    buflen = strlen(buffer); // Actual length of buffer
     fstr = NULL;
 
     for (i = 0; extensions[i].ext != NULL; i++) {
@@ -112,7 +112,7 @@ void web(int fd, int hit) {
         handle_error("Failed to seek file start");
     }
 
-    ret = snprintf(buffer, BUFSIZE, "HTTP/1.1 200 OK\nServer: webserver/1.0\nContent-Length: %ld\nConnection: close\nContent-Type: %s\n\n", len, fstr); // Constructing HTTP OK Response
+    ret = snprintf(buffer, BUFSIZE, "HTTP/1.1 200 OK\nServer: webserver/21021007\nContent-Length: %ld\nConnection: close\nContent-Type: %s\n\n", len, fstr); // Constructing HTTP OK Response
     if (ret < 0 || ret >= BUFSIZE) { // Handling buffer overflow and underflow
         handle_error("Failed to construct HTTP response header");
     }
@@ -176,7 +176,7 @@ int main() {
     for (hit = 1;; hit++) {
         
         length = sizeof(cli_addr);
-        if ((socketfd = accept(listenfd, (struct sockaddr *)&cli_addr, &length)) < 0) {
+        if ((socketfd = accept(listenfd, (struct sockaddr *)&cli_addr, &length)) < 0) { // Accept the connection and verify whether it's valid
             handle_error("Failed to accept incoming connection");
         }
 
