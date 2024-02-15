@@ -27,6 +27,7 @@ struct {
     {"zip", "image/zip"},
     {"gz", "image/gz"},
     {"tar", "image/tar"},
+    {"mp3", "audio/mp3"},
     {"htm", "text/html"},
     {"html", "text/html"},
     {0, 0}
